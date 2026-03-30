@@ -348,6 +348,9 @@ footer {
     display: block;
     filter: grayscale(20%);
     transition: filter 0.3s ease;
+    /* ADD THESE TWO LINES */
+    position: relative;
+    z-index: 5; 
 }
 
 .hero-photo:hover {
@@ -358,13 +361,15 @@ footer {
    NAVBAR COLLAPSE ANIMATION
    ============================================ */
 .navbar-collapse {
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.4s ease, opacity 0.4s ease;
+    transition: opacity 0.25s ease;
+}
+
+.navbar-collapse:not(.show) {
     opacity: 0;
+    pointer-events: none;
 }
 
 .navbar-collapse.show {
-    max-height: 500px;
     opacity: 1;
+    pointer-events: auto;
 }
