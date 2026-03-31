@@ -341,8 +341,8 @@ footer {
 }
 
 .hero-photo {
-    width: 300px;
-    height: 300px;
+    width: clamp(200px, 22vw, 300px);
+    height: clamp(200px, 22vw, 300px);
     object-fit: cover;
     object-position: center top;
     border-radius: 50%;
@@ -794,4 +794,104 @@ footer {
     .tracker-embed-container {
         height: 350px;
     }
+}
+
+/* ============================================
+   ABOUT PAGE
+   ============================================ */
+.about-body {
+    font-size: 0.925rem;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    margin-bottom: 1.25rem;
+}
+
+.hobby-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.hobby-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    transition: border-color 0.3s ease;
+}
+
+.hobby-card:hover {
+    border-color: var(--accent-red);
+}
+
+.hobby-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.hobby-card h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+}
+
+.hobby-card p {
+    font-size: 0.825rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* ============================================
+   CONTACT FORM
+   ============================================ */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group-custom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label-custom {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+.form-input-custom {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.875rem 1rem;
+    font-size: 0.9rem;
+    font-family: var(--font-main);
+    border-radius: 2px;
+    transition: border-color 0.3s ease;
+    outline: none;
+    width: 100%;
+}
+
+.form-input-custom:focus {
+    border-color: var(--accent-red);
+}
+
+.form-input-custom::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.5;
+}
+
+.form-textarea-custom {
+    resize: vertical;
+    min-height: 150px;
 }

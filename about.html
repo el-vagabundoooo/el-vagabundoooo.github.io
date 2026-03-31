@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About & Contact | Juan Lacia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">JDL</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="insurance.html">Insurance</a></li>
+                    <li class="nav-item"><a class="nav-link" href="it.html">IT & Security</a></li>
+                    <li class="nav-item"><a class="nav-link" href="data.html">Data</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About & Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <p class="hero-tag">The Person Behind The Work</p>
+            <h1 class="page-hero-title">About Juan Lacia</h1>
+            <p class="page-hero-sub">Operations specialist, aspiring cybersecurity professional, musician, and perpetual traveller. Based in the Philippines, working with North American clients.</p>
+        </div>
+    </section>
+
+    <!-- ABOUT SPLIT -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row g-5 align-items-start">
+                <div class="col-lg-6">
+                    <p class="section-tag">Who I Am</p>
+                    <h2 class="section-title">Built on Discipline.<br>Driven by Curiosity.</h2>
+                    <p class="about-body">I'm Juan Lacia — an Insurance and Administrative Operations Specialist from the Philippines with nearly a year of direct commercial lines experience at Pond Insurance Agency, where I reported to COO level and managed 300+ client records daily.</p>
+                    <p class="about-body">My background spans insurance operations, IT support, customer service, and data work. The common thread across all of it is the same: I build systems around repetitive work, I flag problems before they become errors, and I take ownership of outcomes rather than just tasks.</p>
+                    <p class="about-body">Right now I'm transitioning deliberately into cybersecurity and AI — pursuing certifications, building projects, and developing the technical depth to match the operational foundation I already have. The goal is a career at the intersection of process, data, and security.</p>
+                    <p class="about-body">I work remotely, aligned to North American time zones, with a 280 Mbps primary connection and mobile data backup. Immediately available.</p>
+                </div>
+                <div class="col-lg-6">
+                    <p class="section-tag">Outside Work</p>
+                    <h2 class="section-title">What I Do<br>When I'm Not Working</h2>
+                    <div class="hobby-grid">
+                        <div class="hobby-card">
+                            <span class="hobby-icon">🚗</span>
+                            <div>
+                                <h4>Road Trips</h4>
+                                <p>Long drives, unfamiliar roads, and the kind of thinking that only happens when you're moving. Road trips are how I decompress and reset.</p>
+                            </div>
+                        </div>
+                        <div class="hobby-card">
+                            <span class="hobby-icon">🥾</span>
+                            <div>
+                                <h4>Hiking</h4>
+                                <p>Getting off the road and onto trails. The Philippines has no shortage of terrain worth climbing.</p>
+                            </div>
+                        </div>
+                        <div class="hobby-card">
+                            <span class="hobby-icon">🎹</span>
+                            <div>
+                                <h4>Piano & Guitar</h4>
+                                <p>Two instruments, same purpose — something to do with my hands that isn't a keyboard. Former choir singer with a lasting interest in music theory.</p>
+                            </div>
+                        </div>
+                        <div class="hobby-card">
+                            <span class="hobby-icon">🎤</span>
+                            <div>
+                                <h4>Former Choir Singer</h4>
+                                <p>Years of choral training built an ear for harmony and an appreciation for precision in performance — qualities that carry over into everything else.</p>
+                            </div>
+                        </div>
+                        <div class="hobby-card">
+                            <span class="hobby-icon">💻</span>
+                            <div>
+                                <h4>IT Personal Projects</h4>
+                                <p>ThinkPad T480s, home lab experiments, and side projects that exist purely because I wanted to understand how something works.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="content-section alt-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="section-header text-center">
+                        <p class="section-tag">Get In Touch</p>
+                        <h2 class="section-title">Contact Me</h2>
+                        <p class="section-sub mx-auto">Fill out the form below and your message will be sent directly to me. I typically respond within 24 hours.</p>
+                    </div>
+                    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="form-group-custom">
+                            <label class="form-label-custom" for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-input-custom" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group-custom">
+                            <label class="form-label-custom" for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input-custom" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group-custom">
+                            <label class="form-label-custom" for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-input-custom" placeholder="What is this regarding?" required>
+                        </div>
+                        <div class="form-group-custom">
+                            <label class="form-label-custom" for="message">Message</label>
+                            <textarea id="message" name="message" class="form-input-custom form-textarea-custom" placeholder="Write your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary-custom w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Juan Lacia · Built from scratch · <a href="about.html">Get in touch</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
