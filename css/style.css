@@ -68,8 +68,14 @@ a:hover {
     background-color: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
-    padding: 1rem 0;
-    transition: all 0.3s ease;
+    padding: 0.875rem 0;
+    transition: background-color 0.2s ease;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
 }
 
 .navbar-brand {
@@ -83,6 +89,34 @@ a:hover {
     color: var(--accent-red);
 }
 
+.availability-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #27ae60;
+    border: 1px solid rgba(39, 174, 96, 0.3);
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+}
+
+.avail-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #27ae60;
+    animation: pulse-avail 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes pulse-avail {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.85); }
+}
+
 .nav-link {
     color: var(--text-secondary) !important;
     font-size: 0.85rem;
@@ -92,7 +126,7 @@ a:hover {
     margin: 0 0.5rem;
     padding: 0.5rem 0 !important;
     position: relative;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
 }
 
 .nav-link::after {
@@ -103,7 +137,7 @@ a:hover {
     width: 0;
     height: 1px;
     background-color: var(--accent-red);
-    transition: width 0.3s ease;
+    transition: width 0.2s ease-out;
 }
 
 .nav-link:hover {
@@ -112,6 +146,14 @@ a:hover {
 
 .nav-link:hover::after {
     width: 100%;
+}
+
+.nav-link-linkedin {
+    color: var(--accent-red) !important;
+}
+
+.nav-link-linkedin:hover {
+    color: var(--accent-red-hover) !important;
 }
 
 /* ============================================
@@ -1241,4 +1283,199 @@ footer {
 .work-photo-wrapper:hover .work-photo {
     transform: scale(1.03);
     filter: grayscale(0%);
+}
+
+/* ============================================
+   SCROLL FADE-IN ANIMATIONS
+   ============================================ */
+.fade-in-ready {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+}
+
+.fade-in-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   LIGHTBOX
+   ============================================ */
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.92);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-out;
+}
+
+.lightbox-overlay.lightbox-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-img-wrapper {
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    display: block;
+    opacity: 1;
+    transition: opacity 0.15s ease-out;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s ease, color 0.2s ease;
+    z-index: 10000;
+}
+
+.lightbox-close:hover {
+    border-color: var(--accent-red);
+    color: var(--accent-red);
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s ease, color 0.2s ease;
+    z-index: 10000;
+}
+
+.lightbox-prev { left: 1.5rem; }
+.lightbox-next { right: 1.5rem; }
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    border-color: var(--accent-red);
+    color: var(--accent-red);
+}
+
+.lightbox-counter {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+/* ============================================
+   ABOUT PAGE PHOTOS
+   ============================================ */
+.about-profile-wrapper {
+    margin-bottom: 1.75rem;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.about-profile-photo {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: grayscale(10%);
+    transition: filter 0.2s ease;
+}
+
+.about-profile-photo:hover {
+    filter: grayscale(0%);
+}
+
+.hobby-content {
+    flex: 1;
+}
+
+.hobby-photo {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    margin-top: 0.875rem;
+    border: 1px solid var(--border-color);
+    filter: grayscale(15%);
+    transition: filter 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.hobby-photo:hover {
+    filter: grayscale(0%);
+    transform: scale(1.01);
+}
+
+/* ============================================
+   PROJECT PDF EMBED
+   ============================================ */
+.project-pdf-wrapper {
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.project-pdf-label {
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem 1.25rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.project-pdf-frame {
+    width: 100%;
+    height: 420px;
+    border: none;
+    display: block;
+    background-color: var(--bg-card);
+}
+
+.project-image-secondary {
+    display: none;
 }

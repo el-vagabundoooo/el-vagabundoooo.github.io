@@ -15,7 +15,13 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">JDL</a>
+            <div class="navbar-left">
+                <a class="navbar-brand" href="index.html">JDL</a>
+                <span class="availability-badge">
+                    <span class="avail-dot"></span>
+                    Available
+                </span>
+            </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,8 +31,9 @@
                     <li class="nav-item"><a class="nav-link" href="insurance.html">Insurance</a></li>
                     <li class="nav-item"><a class="nav-link" href="it.html">IT & Security</a></li>
                     <li class="nav-item"><a class="nav-link" href="data.html">Data</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About & Contact</a></li>
+                    <li class="nav-item nav-item-linkedin"><a class="nav-link nav-link-linkedin" href="https://linkedin.com/in/jdellacia/" target="_blank">LinkedIn ↗</a></li>
                 </ul>
             </div>
         </div>
@@ -49,9 +56,16 @@
             <div class="project-block">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-5">
-                        <div class="project-image-wrapper">
-                            <img src="assets/pp-aspc.jpg" alt="Alkan x Supreme Product Catalog" class="project-image">
+                        <div class="project-pdf-wrapper">
+                        <div class="project-pdf-label">
+                            <span class="live-dot"></span>
+                            Live PDF Preview
                         </div>
+                        <iframe src="assets/pp-aspc.pdf" class="project-pdf-frame" title="Alkan x Supreme Product Catalog"></iframe>
+                        <div class="tracker-embed-footer">
+                            <a href="assets/pp-aspc.pdf" download class="btn btn-outline-custom btn-sm-custom">Download PDF →</a>
+                        </div>
+                    </div>
                     </div>
                     <div class="col-lg-7">
                         <p class="project-category">Digital Publishing · Academic Case Study</p>
@@ -80,9 +94,16 @@
                         </div>
                     </div>
                     <div class="col-lg-5 order-lg-2 order-1">
-                        <div class="project-image-wrapper">
-                            <img src="assets/pp-nip.jpg" alt="NLAC Institutional Prospectus" class="project-image">
+                        <div class="project-pdf-wrapper">
+                        <div class="project-pdf-label">
+                            <span class="live-dot"></span>
+                            Live PDF Preview
                         </div>
+                        <iframe src="assets/pp-nip.pdf" class="project-pdf-frame" title="NLAC Institutional Prospectus"></iframe>
+                        <div class="tracker-embed-footer">
+                            <a href="assets/pp-nip.pdf" download class="btn btn-outline-custom btn-sm-custom">Download PDF →</a>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -91,9 +112,9 @@
             <div class="project-block">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-5">
-                        <div class="project-image-wrapper multi-image">
-                            <img src="assets/pp-smchvb.jpg" alt="Hymnus Viral Branding Profile Frame" class="project-image">
-                        </div>
+                        <div class="project-image-wrapper">
+                        <img src="assets/pp-smchvb.jpg" alt="Hymnus Viral Branding Profile Frame" class="project-image" data-lightbox="project-smchvb" data-src="assets/pp-smchvb.jpg">
+                    </div>
                     </div>
                     <div class="col-lg-7">
                         <p class="project-category">Social Media · Viral Branding · Digital Campaign</p>
@@ -139,7 +160,8 @@
                     </div>
                     <div class="col-lg-5 order-lg-2 order-1">
                         <div class="project-image-wrapper">
-                            <img src="assets/pp-icpchc1.png" alt="Hymnus Concert Campaign" class="project-image">
+                            <img src="assets/pp-icpchc1.png" alt="Hymnus Concert Campaign - Poster" class="project-image" data-lightbox="project-icpchc" data-src="assets/pp-icpchc1.png">
+                            <img src="assets/pp-icpchc2.png" alt="Hymnus Concert Campaign - Facebook Post" class="project-image project-image-secondary" data-lightbox="project-icpchc" data-src="assets/pp-icpchc2.png">
                         </div>
                     </div>
                 </div>
@@ -150,7 +172,9 @@
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-5">
                         <div class="project-image-wrapper">
-                            <img src="assets/pp-bldombcg1.jpg" alt="Mt. Balagbag Care Group Brand Launch" class="project-image">
+                            <img src="assets/pp-bldombcg1.jpg" alt="Mt. Balagbag Care Group - Brand Collage" class="project-image" data-lightbox="project-bldombcg" data-src="assets/pp-bldombcg1.jpg">
+                            <img src="assets/pp-bldombcg2.png" alt="Mt. Balagbag Care Group - Logo" class="project-image project-image-secondary" data-lightbox="project-bldombcg" data-src="assets/pp-bldombcg2.png">
+                            <img src="assets/pp-bldombcg3.png" alt="Mt. Balagbag Care Group - Profile" class="project-image project-image-secondary" data-lightbox="project-bldombcg" data-src="assets/pp-bldombcg3.png">
                         </div>
                     </div>
                     <div class="col-lg-7">
