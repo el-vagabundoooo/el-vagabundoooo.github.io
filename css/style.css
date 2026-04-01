@@ -68,14 +68,22 @@ a:hover {
     background-color: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
-    padding: 0.875rem 0;
+    padding: 0;
     transition: background-color 0.2s ease;
+    min-height: 60px;
+}
+
+.navbar > .container {
+    display: flex;
+    align-items: center;
+    height: 60px;
 }
 
 .navbar-left {
     display: flex;
     align-items: center;
     gap: 0.875rem;
+    flex-shrink: 0;
 }
 
 .navbar-brand {
@@ -83,24 +91,25 @@ a:hover {
     font-weight: 700;
     color: var(--text-primary) !important;
     letter-spacing: 2px;
-}
-
-.navbar-brand span {
-    color: var(--accent-red);
+    line-height: 1;
+    padding: 0;
+    margin: 0;
 }
 
 .availability-badge {
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    font-size: 0.7rem;
-    font-weight: 600;
+    font-size: 0.65rem;
+    font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #27ae60;
-    border: 1px solid rgba(39, 174, 96, 0.3);
-    padding: 0.2rem 0.6rem;
+    border: 1px solid rgba(39, 174, 96, 0.35);
+    padding: 0.25rem 0.6rem;
     border-radius: 2px;
+    line-height: 1;
+    white-space: nowrap;
 }
 
 .avail-dot {
@@ -117,16 +126,56 @@ a:hover {
     50% { opacity: 0.5; transform: scale(0.85); }
 }
 
+.navbar-right-fixed {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 0;
+}
+
+.navbar-linkedin-fixed {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent-red) !important;
+    text-decoration: none;
+    padding: 0 1rem;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+    line-height: 1;
+}
+
+.navbar-linkedin-fixed:hover {
+    color: var(--accent-red-hover) !important;
+}
+
+.navbar-toggler {
+    border-color: var(--border-color) !important;
+    padding: 0.3rem 0.5rem;
+    margin-left: 0.75rem;
+    flex-shrink: 0;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+}
+
 .nav-link {
     color: var(--text-secondary) !important;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 500;
     letter-spacing: 1px;
     text-transform: uppercase;
-    margin: 0 0.5rem;
+    margin: 0 0.4rem;
     padding: 0.5rem 0 !important;
     position: relative;
     transition: color 0.2s ease;
+    white-space: nowrap;
 }
 
 .nav-link::after {
@@ -140,20 +189,45 @@ a:hover {
     transition: width 0.2s ease-out;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
     color: var(--text-primary) !important;
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link.active::after {
     width: 100%;
 }
 
-.nav-link-linkedin {
-    color: var(--accent-red) !important;
+/* Mobile nav dropdown */
+@media (max-width: 767px) {
+    .navbar-collapse.show .navbar-nav {
+        padding: 0.75rem 0;
+        border-top: 1px solid var(--border-color);
+        margin-top: 0.5rem;
+    }
+
+    .navbar-collapse.show .nav-link {
+        padding: 0.6rem 0 !important;
+        margin: 0;
+    }
 }
 
-.nav-link-linkedin:hover {
-    color: var(--accent-red-hover) !important;
+/* Navbar collapse animation — mobile only */
+@media (max-width: 767px) {
+    .navbar-collapse {
+        transition: opacity 0.2s ease-out;
+    }
+
+    .navbar-collapse:not(.show) {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .navbar-collapse.show {
+        opacity: 1;
+        pointer-events: auto;
+    }
 }
 
 /* ============================================
@@ -853,27 +927,35 @@ footer {
 .hobby-grid {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1.5rem;
 }
 
 .hobby-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1.25rem;
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
-    transition: border-color 0.3s ease;
+    transition: border-color 0.2s ease;
+    overflow: hidden;
 }
 
 .hobby-card:hover {
     border-color: var(--accent-red);
 }
 
+.hobby-card-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+    padding: 1.25rem 1.25rem 1rem;
+}
+
 .hobby-icon {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     flex-shrink: 0;
     margin-top: 0.1rem;
+}
+
+.hobby-content {
+    flex: 1;
 }
 
 .hobby-card h4 {
@@ -888,6 +970,22 @@ footer {
     color: var(--text-secondary);
     line-height: 1.65;
     margin: 0;
+}
+
+.hobby-photo {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: grayscale(15%);
+    transition: filter 0.2s ease, transform 0.25s ease-out;
+    cursor: pointer;
+}
+
+.hobby-card:hover .hobby-photo {
+    filter: grayscale(0%);
+    transform: scale(1.02);
 }
 
 /* ============================================
@@ -1470,7 +1568,7 @@ footer {
 
 .project-pdf-frame {
     width: 100%;
-    height: 420px;
+    aspect-ratio: 1 / 1.4142;
     border: none;
     display: block;
     background-color: var(--bg-card);
@@ -1478,4 +1576,27 @@ footer {
 
 .project-image-secondary {
     display: none;
+}
+
+/* ============================================
+   RESUME EMBED
+   ============================================ */
+.resume-embed-container {
+    width: 100%;
+    aspect-ratio: 1 / 1.4142;
+    max-height: 90vh;
+    overflow: hidden;
+}
+
+.resume-embed-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .resume-embed-container {
+        height: 400px;
+    }
 }
