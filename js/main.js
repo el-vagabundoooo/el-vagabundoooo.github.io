@@ -1,16 +1,31 @@
-// ============================================
-// CLICK OUTSIDE NAVBAR TO CLOSE
-// ============================================
 document.addEventListener('DOMContentLoaded', function () {
 
+    // ============================================
+    // CLICK OUTSIDE NAVBAR TO CLOSE
+    // ============================================
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('.navbar-collapse');
     const navbar = document.querySelector('.navbar');
 
-    document.addEventListener('click', function (event) {
-        const isClickInsideNavbar = navbar.contains(event.target);
-        if (!isClickInsideNavbar && navbarCollapse.classList.contains('show')) {
-            navbarToggler.click();
+    if (navbar && navbarCollapse && navbarToggler) {
+        document.addEventListener('click', function (event) {
+            const isClickInsideNavbar = navbar.contains(event.target);
+            if (!isClickInsideNavbar && navbarCollapse.classList.contains('show')) {
+                navbarToggler.click();
+            }
+        });
+    }
+
+    // ============================================
+    // AUTO ACTIVE NAV LINK
+    // ============================================
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
         }
     });
 
@@ -18,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // SCROLL FADE-IN ANIMATIONS
     // ============================================
     const fadeElements = document.querySelectorAll(
-        '.expertise-card, .ops-card, .story-card, .tool-card, .hobby-card, .project-block, .stat-item, .rec-card, .coming-soon-wrapper'
+        '.expertise-card, .ops-card, .story-card, .tool-card, .hobby-feed-card, .project-block, .stat-item, .rec-card, .coming-soon-wrapper, .timeline-item, .social-link-card'
     );
 
     const observer = new IntersectionObserver((entries) => {
@@ -28,15 +43,70 @@ document.addEventListener('DOMContentLoaded', function () {
                 observer.unobserve(entry.target);
             }
         });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px'
-    });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
     fadeElements.forEach(el => {
         el.classList.add('fade-in-ready');
         observer.observe(el);
     });
+
+    // ============================================
+    // BACK TO TOP
+    // ============================================
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop) {
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 400) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        backToTop.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // ============================================
+    // TYPEWRITER ANIMATION
+    // ============================================
+    const typewriterEl = document.getElementById('typewriter');
+    if (typewriterEl) {
+        const phrases = [
+            'Insurance Operations Specialist',
+            'Commercial Lines · AMS Platforms',
+            'Transitioning into Cybersecurity',
+            'Remote · North American Timezone',
+            'Available for Work'
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 55;
+
+        function type() {
+            const current = phrases[phraseIndex];
+            if (isDeleting) {
+                typewriterEl.textContent = current.substring(0, charIndex - 1);
+                charIndex--;
+                typingSpeed = 25;
+            } else {
+                typewriterEl.textContent = current.substring(0, charIndex + 1);
+                charIndex++;
+                typingSpeed = 55;
+            }
+            if (!isDeleting && charIndex === current.length) {
+                typingSpeed = 1800;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typingSpeed = 300;
+            }
+            setTimeout(type, typingSpeed);
+        }
+        setTimeout(type, 800);
+    }
 
     // ============================================
     // LIGHTBOX
@@ -79,9 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
             img.alt = currentGallery[currentIndex].alt;
             img.style.opacity = '1';
         }, 150);
-        counter.textContent = currentGallery.length > 1
-            ? `${currentIndex + 1} / ${currentGallery.length}`
-            : '';
+        counter.textContent = currentGallery.length > 1 ? `${currentIndex + 1} / ${currentGallery.length}` : '';
         lightboxOverlay.querySelector('.lightbox-prev').style.display = currentGallery.length > 1 ? 'flex' : 'none';
         lightboxOverlay.querySelector('.lightbox-next').style.display = currentGallery.length > 1 ? 'flex' : 'none';
     }
@@ -101,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
     lightboxOverlay.querySelector('.lightbox-next').addEventListener('click', nextImage);
 
     lightboxOverlay.addEventListener('click', function (e) {
-        if (e.target === lightboxOverlay || e.target === lightboxOverlay.querySelector('.lightbox-img-wrapper')) {
+        if (e.target === lightboxOverlay || e.target.classList.contains('lightbox-img-wrapper')) {
             closeLightbox();
         }
     });
