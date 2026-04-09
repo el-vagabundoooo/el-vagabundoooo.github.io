@@ -1954,3 +1954,406 @@ footer {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
+
+/* ============================================
+   IT PAGE — BUILT SECTION
+   ============================================ */
+.it-built-section {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.it-built-title {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.3px;
+}
+
+.it-built-sub {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    max-width: 700px;
+}
+
+.it-built-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.it-built-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    transition: border-color 0.2s ease;
+}
+
+.it-built-card:hover {
+    border-color: var(--accent-red);
+}
+
+.it-built-icon {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.it-built-card h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.it-built-card p {
+    font-size: 0.825rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ============================================
+   IT PAGE — AI COLLABORATION SECTION
+   ============================================ */
+.it-ai-section {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.it-ai-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.it-ai-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.it-ai-body p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    margin-bottom: 1rem;
+}
+
+.it-ai-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 2rem 0;
+}
+
+.it-ai-skill {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    transition: border-color 0.2s ease;
+}
+
+.it-ai-skill:hover {
+    border-color: var(--accent-red);
+}
+
+.it-ai-skill-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--accent-red);
+    flex-shrink: 0;
+    margin-top: 0.4rem;
+}
+
+.it-ai-skill h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+}
+
+.it-ai-skill p {
+    font-size: 0.825rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.it-ai-quote {
+    border-left: 3px solid var(--accent-red);
+    padding: 1.25rem 1.5rem;
+    background-color: rgba(192, 57, 43, 0.05);
+    margin-top: 1.5rem;
+}
+
+.it-ai-quote p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-style: italic;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .it-built-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .it-ai-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* ============================================
+   DATA PAGE — PROJECT SECTION
+   ============================================ */
+.data-meta-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    height: 100%;
+    transition: border-color 0.2s ease;
+}
+
+.data-meta-card:hover {
+    border-color: var(--accent-red);
+}
+
+.data-meta-icon {
+    font-size: 1.4rem;
+    margin-bottom: 0.25rem;
+}
+
+.data-meta-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent-red);
+}
+
+.data-meta-value {
+    font-size: 0.825rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.finding-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--accent-red);
+    padding: 1.75rem;
+    height: 100%;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.finding-card:hover {
+    border-color: var(--accent-red);
+    transform: translateY(-3px);
+}
+
+.finding-stat {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--accent-red);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+}
+
+.finding-card h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.6rem;
+}
+
+.finding-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* ── CHARTS ── */
+.data-charts-section {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.data-chart-block {
+    margin-bottom: 2.5rem;
+}
+
+.data-chart-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-red);
+    margin-bottom: 0.4rem;
+}
+
+.data-chart-caption {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.data-chart-wrapper {
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+}
+
+.data-chart-wrapper:hover {
+    border-color: var(--accent-red);
+}
+
+.data-chart-img {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    filter: brightness(0.97);
+}
+
+.data-chart-img:hover {
+    transform: scale(1.01);
+    filter: brightness(1);
+}
+
+/* ── METHODOLOGY ── */
+.data-method-section {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.method-step {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    height: 100%;
+    transition: border-color 0.2s ease;
+}
+
+.method-step:hover {
+    border-color: var(--accent-red);
+}
+
+.method-num {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-red);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+}
+
+.method-step h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.method-step p {
+    font-size: 0.825rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* ── DOWNLOADS ── */
+.data-downloads-section {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.data-download-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.data-download-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.data-download-card:hover {
+    border-color: var(--accent-red);
+    color: var(--text-primary);
+    transform: translateX(4px);
+}
+
+.data-dl-icon {
+    font-size: 1.75rem;
+    flex-shrink: 0;
+}
+
+.data-download-card > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.data-dl-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.data-dl-sub {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.data-dl-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--accent-red);
+    border: 1px solid var(--accent-red);
+    padding: 0.2rem 0.5rem;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .finding-stat {
+        font-size: 1.75rem;
+    }
+
+    .data-download-card {
+        flex-wrap: wrap;
+    }
+}
