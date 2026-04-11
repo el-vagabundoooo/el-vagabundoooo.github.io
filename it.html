@@ -96,18 +96,88 @@
                         <div class="it-built-card">
                             <span class="it-built-icon">📡</span>
                             <h4>Integrations</h4>
-                            <p>Formspree contact form API, Google Sheets published iframe embed, PDF fragment identifier parameters, SVG favicon, Open Graph meta tags for social sharing previews, responsive favicon across all pages.</p>
+                            <p>Formspree contact form API, Google Sheets published iframe embed, PDF fragment identifier parameters, SVG favicon, Open Graph meta tags for social sharing previews.</p>
                         </div>
                         <div class="it-built-card">
                             <span class="it-built-icon">📱</span>
                             <h4>Responsive Design</h4>
-                            <p>Mobile-first breakpoint strategy, CSS clamp() for fluid typography, aspect-ratio for proportional PDF and photo containers, flexbox and grid layouts that adapt across all screen sizes.</p>
+                            <p>Mobile-first breakpoint strategy, CSS clamp() for fluid typography, aspect-ratio for proportional containers, flexbox and grid layouts that adapt across all screen sizes.</p>
                         </div>
                         <div class="it-built-card">
                             <span class="it-built-icon">🐛</span>
                             <h4>Debugging & QA</h4>
-                            <p>Systematic identification and resolution of: CSS specificity conflicts, Bootstrap breakpoint collisions, Git push rejection errors, PDF iframe cross-browser behaviour, image path case-sensitivity issues on GitHub servers, and navbar collapse animation conflicts.</p>
+                            <p>Systematic identification and resolution of CSS conflicts, Bootstrap breakpoint collisions, Git push rejection errors, PDF iframe cross-browser behaviour, and navbar collapse animation conflicts.</p>
                         </div>
+                    </div>
+                </div>
+
+                <!-- SECURECHECK PROJECT -->
+                <div class="it-built-section" style="margin-top: 3rem;">
+                    <p class="section-tag">Completed Project</p>
+                    <h3 class="it-built-title">SecureCheck — Security Audit & Phishing Analyzer</h3>
+                    <p class="it-built-sub">A Python-based security tool combining a personal machine security audit with a phishing email analyzer. Generates a professional HTML report with risk-rated findings. Built from scratch using industry-standard tools and methodologies.</p>
+
+                    <div class="securecheck-meta-row">
+                        <div class="sc-meta-card">
+                            <span class="sc-meta-icon">🔒</span>
+                            <span class="sc-meta-label">Module 1</span>
+                            <span class="sc-meta-value">Personal Security Audit</span>
+                        </div>
+                        <div class="sc-meta-card">
+                            <span class="sc-meta-icon">🎣</span>
+                            <span class="sc-meta-label">Module 2</span>
+                            <span class="sc-meta-value">Phishing Email Analyzer</span>
+                        </div>
+                        <div class="sc-meta-card">
+                            <span class="sc-meta-icon">🛠️</span>
+                            <span class="sc-meta-label">Stack</span>
+                            <span class="sc-meta-value">Python · nmap · jinja2 · requests</span>
+                        </div>
+                        <div class="sc-meta-card">
+                            <span class="sc-meta-icon">📄</span>
+                            <span class="sc-meta-label">Output</span>
+                            <span class="sc-meta-value">HTML Risk Report</span>
+                        </div>
+                    </div>
+
+                    <div class="it-built-grid" style="margin-top: 1.5rem;">
+                        <div class="it-built-card">
+                            <span class="it-built-icon">🔍</span>
+                            <h4>Port Scanning</h4>
+                            <p>Uses nmap to scan local machine ports 1–1024 with service version detection. Cross-references against a curated database of 20 known dangerous ports — each with risk level and plain-English explanation.</p>
+                        </div>
+                        <div class="it-built-card">
+                            <span class="it-built-icon">🛡️</span>
+                            <h4>System Security Checks</h4>
+                            <p>Verifies Windows Firewall status across Domain, Private, and Public profiles. Checks SMB port 445 exposure — the primary ransomware propagation vector. Scans nearby Wi-Fi for WEP and Open security.</p>
+                        </div>
+                        <div class="it-built-card">
+                            <span class="it-built-icon">📧</span>
+                            <h4>Email Header Analysis</h4>
+                            <p>Parses raw email text to detect From/Reply-To/Return-Path mismatches. Checks SPF, DKIM, and DMARC authentication header results. Identifies spoofed sender domains and suspicious TLDs.</p>
+                        </div>
+                        <div class="it-built-card">
+                            <span class="it-built-icon">🔗</span>
+                            <h4>URL & Link Analysis</h4>
+                            <p>Extracts all URLs from email body using regex. Checks for raw IP addresses, brand impersonation patterns, URL shorteners, and follows redirect chains to reveal final destinations.</p>
+                        </div>
+                        <div class="it-built-card">
+                            <span class="it-built-icon">🧠</span>
+                            <h4>Social Engineering Detection</h4>
+                            <p>Scans email subject and body for 20+ urgency and fear trigger phrases used in social engineering attacks. Produces a 0–100 risk score with CRITICAL / HIGH / MODERATE / LOW classification.</p>
+                        </div>
+                        <div class="it-built-card">
+                            <span class="it-built-icon">📊</span>
+                            <h4>Professional HTML Reports</h4>
+                            <p>Generates timestamped HTML reports using Jinja2 templating. Each finding is risk-rated and colour-coded. Reports open automatically in the browser and are print-ready.</p>
+                        </div>
+                    </div>
+
+                    <div class="sc-github-link">
+                        <a href="https://github.com/el-vagabundoooo/SecureCheck" target="_blank" class="btn btn-outline-custom" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            View Source on GitHub
+                        </a>
                     </div>
                 </div>
 

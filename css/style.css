@@ -2357,3 +2357,52 @@ footer {
         flex-wrap: wrap;
     }
 }
+
+/* ============================================
+   SECURECHECK PROJECT SECTION
+   ============================================ */
+.securecheck-meta-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.875rem;
+    margin-top: 1.5rem;
+}
+
+.sc-meta-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    transition: border-color 0.2s ease;
+}
+
+.sc-meta-card:hover {
+    border-color: var(--accent-red);
+}
+
+.sc-meta-icon {
+    font-size: 1.3rem;
+    margin-bottom: 0.2rem;
+}
+
+.sc-meta-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent-red);
+}
+
+.sc-meta-value {
+    font-size: 0.825rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.sc-github-link {
+    margin-top: 1.75rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--border-color);
+}
