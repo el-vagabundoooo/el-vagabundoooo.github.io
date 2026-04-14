@@ -2406,3 +2406,46 @@ footer {
     padding-top: 1.75rem;
     border-top: 1px solid var(--border-color);
 }
+
+/* ── SECURECHECK SCREENSHOTS ── */
+.sc-screenshots {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.sc-screenshot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.sc-screenshot-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sc-screenshot-img {
+    width: 100%;
+    display: block;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+    filter: brightness(0.97);
+}
+
+.sc-screenshot-img:hover {
+    border-color: var(--accent-red);
+    transform: scale(1.01);
+    filter: brightness(1);
+}
+
+.sc-screenshot-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-align: center;
+}
